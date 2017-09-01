@@ -42,6 +42,7 @@
 # - *conf_mode*: can be used to change the permissions on
 #   /srv/tomcat/$name/conf/, because some webapps require the ability to write
 #   their own config files. Defaults to 2570 (writeable only by $group members).
+# - *access_logs*: turn on tomcat access logs valve. Default to true.
 # - *logs_mode*: can be used to change the permissions on
 #   /srv/tomcat/$name/logs/, because you may need to make the logs readable
 #   by other users / everyone. Defaults to 2770.
@@ -106,6 +107,7 @@ define tomcat::instance(
   $ajp_port           = '8009',
   $ajp_address        = false,
   $conf_mode          = undef,
+  $access_logs        = true,
   $logs_mode          = '2770',
   $catalina_base_mode = '0555',
   $server_xml_file    = undef,

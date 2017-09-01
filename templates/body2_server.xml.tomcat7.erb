@@ -35,6 +35,7 @@
         <!--
         <Valve className="org.apache.catalina.authenticator.SingleSignOn" />
         -->
+        <% if @access_log -%>
 
         <!-- Access log processes all example.
              Documentation at: /docs/config/valve.html
@@ -43,8 +44,9 @@
                prefix="localhost_access_log." suffix=".txt"
                pattern="%h %l %u %t &quot;%r&quot; %s %b" />
 
+        <% end -%>
+
       </Host>
     </Engine>
   </Service>
 </Server>
-
